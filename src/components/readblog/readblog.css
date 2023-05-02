@@ -1,0 +1,45 @@
+.headpart {
+    font-size: 1.9rem;
+    font-weight: 600;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    margin-top: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(9, 37, 37);
+    color: rgb(255, 255, 255);
+}
+.btndiv{
+    height: 100%;
+    width: 40%;
+   font-size: 1.3rem;
+   font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.h2part{
+    height: 100%;
+    width: 60%;
+ 
+    display: flex;
+    align-items: center;
+}
+
+.imgdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+    width: 20%;
+    box-shadow: 0px 2px 5px black;
+    margin-top: 1rem;
+}
+
+.imgdiv img {
+    height: 100%;
+    width: 80%;
+    box-shadow: 0px 0px 10px black;
+}
+#descpart{
+ margin-top: 1rem;
+}

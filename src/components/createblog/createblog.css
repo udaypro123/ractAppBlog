@@ -1,0 +1,11 @@
+.form-check-label{
+    font-size: 1.8rem;
+    color: rgb(137, 137, 137);
+    font-weight: 600;
+}
+
+textarea {
+    resize: vertical;
+    height: 20rem;
+    width: 100%;
+}

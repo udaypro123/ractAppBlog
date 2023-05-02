@@ -1,0 +1,50 @@
+#loginconatiner{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/001/963/657/original/abstract-technology-background-background-3d-grid-cyber-technology-ai-tech-wire-network-futuristic-wireframe-artificial-intelligence-cyber-security-background-vector.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.g-3{
+    height:80%;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    border-radius: 1rem;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/001/963/657/original/abstract-technology-background-background-3d-grid-cyber-technology-ai-tech-wire-network-futuristic-wireframe-artificial-intelligence-cyber-security-background-vector.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.divpart{
+    height: 90%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divpart img{
+    height: 50%;
+    width: 100%;
+    border-radius: 1rem;
+}
+.divpart2{
+    height: 50%;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   flex-direction: column;
+
+}
+.divpart2 input{
+    height: 15%;
+   width: 65%;
+  
+}

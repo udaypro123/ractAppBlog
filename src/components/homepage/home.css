@@ -1,0 +1,36 @@
+
+.rowpost{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#btncol{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#btncol h4{
+   margin-left: 3rem;
+   margin-top: 1rem;
+}
+
+
+.rowmain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#newitem{
+    height: 32rem;
+    width: 18rem;
+}
+.linkdiv a{
+
+    text-decoration: none;
+}
+.headfive{
+    font-size: 1rem;
+}
+
