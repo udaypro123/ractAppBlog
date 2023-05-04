@@ -1,16 +1,16 @@
-import React, { useEffect,Fragment } from 'react'
+import React, { useEffect, Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './home.css'
 import { getnewdata } from '../reduux/newsSlice'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { addnewitem } from '../reduux/blogitemSlice'
-import { deletedtata } from '../reduux/newsSlice'
+import { removeitem } from '../reduux/newsSlice'
 
 const Home = () => {
 
   const dispatch = useDispatch()
 
-  const { newsdata, status,error } = useSelector(state => state.newsapi)
+  const { newsdata, status, error } = useSelector(state => state.newsapi)
   const newsdatas = newsdata.articles
 
   useEffect(() => {
@@ -21,12 +21,12 @@ const Home = () => {
     dispatch(addnewitem(ele))
   }
 
-
-  const dletehandle=(index)=>{
-    dispatch(deletedtata(index))
+  const dletehandle = (index) => {
+    dispatch(removeitem(index))
   }
 
-  if(error===true){
+
+  if (error === true) {
     return (
       <>
         <h4> This api is not working beacuse of server error... </h4>
@@ -40,19 +40,19 @@ const Home = () => {
     </>
   }
 
-  if(status===false){
+  if (status === false) {
     return (
       <>
-      <div className='headingh2'>
-        <h2> Loading... </h2>
-      </div>
+        <div className='headingh2'>
+          <h2> Loading... </h2>
+        </div>
       </>
     )
   }
 
   return (
     <>
-    
+
       <div className="container">
         <div className="row" >
           <div className="col" id='btncol'>
@@ -64,10 +64,10 @@ const Home = () => {
         </div>
         <div className="row mt-5 rowmain" >
           {
-            newsdatas && newsdatas.map((ele,index) => {
-              return (<Fragment key={index}>
+            newsdatas && newsdatas.map((ele, index) => {
+              return (<Fragment key={ index }>
 
-                <div  className="col-6 col-md-4"  id='newitem'>
+                <div className="col-6 col-md-4" id='newitem'>
 
                   <div className="card">
                     <img src={ ele.urlToImage } className="card-img-top" alt="..." />
@@ -78,10 +78,10 @@ const Home = () => {
                       <h6 className="card-subtitle text-body-secondary mt-2">Date :- { ele.publishedAt.slice(0, 10) }</h6>
 
                       <h6 className="card-subtitle text-body-secondary  mt-1">time :- { ele.publishedAt.slice(12, ele.publishedAt.length - 1) }</h6>
-                      {/* <p className="card-text mt-2" style={ { fontSize: ".9rem" } }>{ ele.description.length <= 200 ? ele.description : ele.description.slice(0, 150) }</p> */}
-                      <p className="card-text mt-2" style={ { fontSize: ".9rem" } }>{ ele.description}</p> 
-                     
-                      <button onClick={()=>dletehandle(index)}>delete</button>
+                      {/* <p className="card-text mt-2" style={ { fontSize: ".9rem" } }>{ ele.description.length <= 200 ? ele.description : ele.description.slice(0, 150) }</p> */ }
+                      <p className="card-text mt-2" style={ { fontSize: ".9rem" } }>{ ele.description }</p>
+
+                      <button onClick={ () => dletehandle(index) }>delete</button>
 
                     </div>
 
