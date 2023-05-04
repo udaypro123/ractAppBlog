@@ -6,7 +6,7 @@ export const authcontext=createContext()
 
 function ContextProvider({children}){
 
-    const [islogin,setislogin]=useState(false)
+    const [islogin,setislogin]=useState(true)
     const [inputvalue,setinputvalue]=useState("")
     const [password,setpassword]=useState("")
 

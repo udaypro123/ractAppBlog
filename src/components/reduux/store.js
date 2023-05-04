@@ -8,5 +8,5 @@ export const store=configureStore({
             reducer:{
                     newsapi:newsSlice,
                     itemslice:blogitemSlice,
-            },
+        },
 })

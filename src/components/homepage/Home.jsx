@@ -4,11 +4,9 @@ import './home.css'
 import { getnewdata } from '../reduux/newsSlice'
 import { Link, useParams } from 'react-router-dom'
 import { addnewitem } from '../reduux/blogitemSlice'
-
+import { deleteid } from '../reduux/newsSlice'
 
 const Home = () => {
-
-  const {id}=useParams()
 
   const dispatch = useDispatch()
 
@@ -23,10 +21,15 @@ const Home = () => {
     dispatch(addnewitem(ele))
   }
 
+
+  const dletehandle=()=>{
+    dispatch(deleteid())
+  }
+
   if(error===true){
     return (
       <>
-        <h4> This api is working beacuse of server error... </h4>
+        <h4> This api is not working beacuse of server error... </h4>
       </>
     )
   }
@@ -70,14 +73,15 @@ const Home = () => {
                     <img src={ ele.urlToImage } className="card-img-top" alt="..." />
                     <div className="card-body">
                       <div className='linkdiv' onClick={ () => { handleclick(ele) } } >
-                        <Link to={ `/${id}` }><h5 className="card-title headfive">{ ele.title }</h5></Link>
+                        <Link to={ `/${index}` }><h5 className="card-title headfive">{ ele.title }</h5></Link>
                       </div>
                       <h6 className="card-subtitle text-body-secondary mt-2">Date :- { ele.publishedAt.slice(0, 10) }</h6>
 
                       <h6 className="card-subtitle text-body-secondary  mt-1">time :- { ele.publishedAt.slice(12, ele.publishedAt.length - 1) }</h6>
                       {/* <p className="card-text mt-2" style={ { fontSize: ".9rem" } }>{ ele.description.length <= 200 ? ele.description : ele.description.slice(0, 150) }</p> */}
-                      <p className="card-text mt-2" style={ { fontSize: ".9rem" } }>{ ele.description }</p>
+                      <p className="card-text mt-2" style={ { fontSize: ".9rem" } }>{ ele.description}</p> 
                      
+                      <button onClick={()=>dletehandle(index)}>delete</button>
 
                     </div>
 

@@ -38,7 +38,7 @@ const CreateBlog = () => {
 
         <div className="mt-3 form-check ">
 
-          <label className="form-check-label" for="exampleCheck1" >React Blog app</label>
+          <label className="form-check-label" >React Blog app</label>
         </div>
 
         <div className="mt-3">

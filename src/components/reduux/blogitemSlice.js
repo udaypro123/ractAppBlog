@@ -15,7 +15,8 @@ const blogitemSlice=createSlice({
 
         addcreatedata(state, action){
             state.createdata.push(action.payload)
-        }
+        },
+        
     }
 })
 

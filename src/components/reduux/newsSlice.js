@@ -4,7 +4,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 export const getnewdata = createAsyncThunk('news/newapi', async () => {
 
-    const response = await fetch("https://newsapi.org/v2/top-headlines?country=in&apiKey=bf2aa5c84ca54059b15cfa3dc0e418d2")
+     const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=bf2aa5c84ca54059b15cfa3dc0e418d2")
+    // const response = await fetch("http://localhost:3500/Blogs")
     const data = await response.json();
     return data;
 })
@@ -16,7 +17,12 @@ export const newsSlice = createSlice({
         status:false,
         error:false,
     },
-    reducer: {},
+    
+    reducer: {
+        deleteid(state, action){
+          state.newsdata.splice(action.payload, 1)
+        },
+    },
     extraReducers: (builder) => {
 
 
@@ -32,9 +38,12 @@ export const newsSlice = createSlice({
             state.error = true;
         })
 
-    }
+      
+    },
+
+    
 
 })
 
-
 export default newsSlice.reducer;
+export  const {deleteid}=newsSlice.actions;
