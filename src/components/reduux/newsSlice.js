@@ -17,12 +17,8 @@ export const newsSlice = createSlice({
         status:false,
         error:false,
     },
-    
-    reducer: {
-        deleteid(state, action){
-          state.newsdata.splice(action.payload, 1)
-        },
-    },
+
+    reducer: {},
     extraReducers: (builder) => {
 
 
@@ -38,12 +34,15 @@ export const newsSlice = createSlice({
             state.error = true;
         })
 
-      
+        
     },
+    deletedtata(state,action){
+        state.newsdata.splice(action.payload,1)
+    }
 
     
 
 })
 
 export default newsSlice.reducer;
-export  const {deleteid}=newsSlice.actions;
+export  const {deletedtata}=newsSlice.actions;

@@ -4,7 +4,7 @@ import './home.css'
 import { getnewdata } from '../reduux/newsSlice'
 import { Link, useParams } from 'react-router-dom'
 import { addnewitem } from '../reduux/blogitemSlice'
-import { deleteid } from '../reduux/newsSlice'
+import { deletedtata } from '../reduux/newsSlice'
 
 const Home = () => {
 
@@ -22,8 +22,8 @@ const Home = () => {
   }
 
 
-  const dletehandle=()=>{
-    dispatch(deleteid())
+  const dletehandle=(index)=>{
+    dispatch(deletedtata(index))
   }
 
   if(error===true){
